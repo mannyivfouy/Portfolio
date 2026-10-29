@@ -1,1 +1,117 @@
-<p>footer works!</p>
+<footer class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+
+    <!-- Main Footer -->
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Brand -->
+      <div>
+        <a
+          routerLink="/"
+          class="font-heading text-xl font-semibold tracking-tight text-white"
+        >
+          Mann Yivfouy<span class="text-indigo-400">.</span>
+        </a>
+
+        <p class="mt-4 max-w-sm text-sm leading-6 text-zinc-400">
+          Junior Full-Stack Developer focused on building clean,
+          practical, and user-friendly web applications.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h2 class="text-sm font-semibold text-white">
+          Navigation
+        </h2>
+
+        <nav class="mt-4 flex flex-col gap-3">
+          <a
+            routerLink="/"
+            class="w-fit text-sm text-zinc-400 transition-colors hover:text-white"
+          >
+            Home
+          </a>
+
+          <a
+            routerLink="/about"
+            class="w-fit text-sm text-zinc-400 transition-colors hover:text-white"
+          >
+            About
+          </a>
+
+          <a
+            routerLink="/projects"
+            class="w-fit text-sm text-zinc-400 transition-colors hover:text-white"
+          >
+            Projects
+          </a>
+
+          <a
+            routerLink="/contact"
+            class="w-fit text-sm text-zinc-400 transition-colors hover:text-white"
+          >
+            Contact
+          </a>
+        </nav>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h2 class="text-sm font-semibold text-white">
+          Connect
+        </h2>
+
+        <div class="mt-4 flex items-center gap-3">
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/mannyivfouy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white"
+          >
+            <lucide-icon [img]="Github" [size]="18"></lucide-icon>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/mann-yivfouy-baa2a9387"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white"
+          >
+            <lucide-icon [img]="Linkedin" [size]="18"></lucide-icon>
+          </a>
+
+          <!-- Email -->
+          <a
+            href="mailto:mannyivfouy@example.com"
+            aria-label="Email"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white"
+          >
+            <lucide-icon [img]="Mail" [size]="18"></lucide-icon>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div
+      class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>
+        © 2026 Mann Yivfouy. All rights reserved.
+      </p>
+
+      <p>
+        Built with Angular & Tailwind CSS.
+      </p>
+    </div>
+
+  </div>
+</footer>
