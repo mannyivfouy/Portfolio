@@ -1,1 +1,131 @@
-<p>navbar works!</p>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#09090b]/80 backdrop-blur-md">
+  <nav
+    class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
+    aria-label="Main navigation"
+  >
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="font-heading text-xl font-semibold tracking-tight text-white"
+    >
+      Mann Yivfouy<span class="text-indigo-400">.</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden items-center gap-6 md:flex">
+      <a
+        routerLink="/"
+        routerLinkActive="text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="text-white"
+        class="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+      >
+        About
+      </a>
+
+      <a
+        routerLink="/projects"
+        routerLinkActive="text-white"
+        class="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+      >
+        Projects
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="text-white"
+        class="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+      >
+        Contact
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/mannyivfouy"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile"
+        class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white"
+      >
+        <lucide-icon [img]="Github" [size]="18"></lucide-icon>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      type="button"
+      (click)="toggleMenu()"
+      class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-300 transition-colors hover:bg-white/5 hover:text-white md:hidden"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle navigation menu"
+    >
+      @if (isMenuOpen) {
+        <lucide-icon [img]="X" [size]="20"></lucide-icon>
+      } @else {
+        <lucide-icon [img]="Menu" [size]="20"></lucide-icon>
+      }
+    </button>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  @if (isMenuOpen) {
+    <div class="border-t border-white/10 px-6 py-4 md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1">
+        <a
+          routerLink="/"
+          routerLinkActive="bg-white/5 text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()"
+          class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          Home
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="bg-white/5 text-white"
+          (click)="closeMenu()"
+          class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          About
+        </a>
+
+        <a
+          routerLink="/projects"
+          routerLinkActive="bg-white/5 text-white"
+          (click)="closeMenu()"
+          class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          Projects
+        </a>
+
+        <a
+          routerLink="/contact"
+          routerLinkActive="bg-white/5 text-white"
+          (click)="closeMenu()"
+          class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          Contact
+        </a>
+
+        <a
+          href="https://github.com/mannyivfouy"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+        >
+          <lucide-icon [img]="Github" [size]="18"></lucide-icon>
+          GitHub
+        </a>
+      </div>
+    </div>
+  }
+</header>
