@@ -1,1 +1,186 @@
-<p>about works!</p>
+<!-- ABOUT INTRODUCTION -->
+<section>
+  <div class="mx-auto max-w-6xl px-6 pb-24 pt-32 sm:pt-36">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">About Me</p>
+
+      <h1
+        class="mt-4 font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        A little more about who I am.
+      </h1>
+
+      <div class="mt-8 max-w-2xl space-y-5 text-base leading-8 text-zinc-400 sm:text-lg">
+        <p>
+          I'm Mann Yivfouy, a fourth-year Management Information Systems student at SETEC Institute
+          and an aspiring Junior Full-Stack Developer.
+        </p>
+
+        <p>
+          I enjoy turning ideas into practical web applications and learning how frontend, backend,
+          databases, and APIs work together to create complete digital experiences.
+        </p>
+
+        <p>
+          Through academic and personal projects, I've gained hands-on experience building
+          applications with technologies such as Angular, TypeScript, Node.js, Express.js, NestJS,
+          MySQL, PostgreSQL, and MongoDB.
+        </p>
+      </div>
+
+      <a
+        href="assets/cv/mann-yivfouy-cv.pdf"
+        download
+        class="mt-8 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/4 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/8"
+      >
+        <lucide-icon [img]="Download" [size]="17"></lucide-icon>
+        Download CV
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">Experience</p>
+      </div>
+
+      <!-- Experience list -->
+      <div class="space-y-12">
+        @for (experience of experiences; track experience.role) {
+          <article>
+            <!-- Header -->
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+              <div>
+                <h2 class="font-heading text-2xl font-bold tracking-tight text-white">
+                  {{ experience.role }}
+                </h2>
+
+                <p class="mt-1 text-sm text-zinc-500">
+                  {{ experience.company }} · {{ experience.type }}
+                </p>
+              </div>
+
+              <p class="text-sm text-zinc-500">
+                {{ experience.period }}
+              </p>
+            </div>
+
+            <!-- Description -->
+            <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-400">
+              {{ experience.description }}
+            </p>
+
+            <!-- Responsibilities -->
+            <ul class="mt-6 max-w-2xl space-y-3">
+              @for (responsibility of experience.responsibilities; track responsibility) {
+                <li class="flex gap-3 text-sm leading-6 text-zinc-400">
+                  <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400"></span>
+
+                  <span>{{ responsibility }}</span>
+                </li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">Education</p>
+      </div>
+
+      <!-- Education list -->
+      <div class="space-y-12">
+        @for (education of educationList; track education.degree) {
+          <article>
+            <!-- Header -->
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+              <div>
+                <h2 class="font-heading text-2xl font-bold tracking-tight text-white">
+                  {{ education.degree }}
+                </h2>
+
+                <p class="mt-1 text-sm text-zinc-500">
+                  {{ education.institution }} · {{ education.level }}
+                </p>
+              </div>
+
+              <p class="text-sm text-zinc-500">
+                {{ education.period }}
+              </p>
+            </div>
+
+            <!-- Description -->
+            @if (education.description) {
+              <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-400">
+                {{ education.description }}
+              </p>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENTLY -->
+<section class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">Currently</p>
+      </div>
+
+      <!-- Content -->
+      <div class="max-w-2xl">
+        <p class="text-lg leading-8 text-zinc-300">
+          Finishing my Bachelor's degree in Management Information Systems and preparing for my
+          internship semester. I'm looking for opportunities where I can contribute as a Junior
+          Full-Stack Developer while continuing to grow my skills.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I BUILD -->
+<section class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">What I Build</p>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        @for (capability of capabilities; track capability.title) {
+          <article>
+            <h2 class="font-heading text-xl font-bold tracking-tight text-white">
+              {{ capability.title }}
+            </h2>
+
+            <p class="mt-4 text-sm leading-7 text-zinc-400">
+              {{ capability.description }}
+            </p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-contact-cta />
