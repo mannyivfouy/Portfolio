@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.diagram-container {
+  display: block;
+  overflow-x: auto;
+}
+
+.diagram-container svg {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
