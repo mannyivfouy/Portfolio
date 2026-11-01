@@ -1,1 +1,172 @@
-<p>project-detail works!</p>
+@if (project; as detail) {
+  <main class="min-h-screen bg-[#09090b] text-zinc-100">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <!-- Project Header -->
+      <header class="mb-16">
+        <a
+          routerLink="/projects"
+          class="mb-8 inline-flex cursor-pointer items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
+        >
+          <lucide-icon [img]="ArrowLeft" [size]="16"></lucide-icon>
+          Back to Projects
+        </a>
+
+        <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-indigo-400">
+          Project Case Study
+        </p>
+
+        <h1 class="mb-6 font-heading text-4xl font-bold tracking-tight md:text-6xl">
+          {{ detail.slug }}
+        </h1>
+
+        <p class="max-w-3xl text-lg leading-8 text-zinc-400">
+          {{ detail.overview }}
+        </p>
+      </header>
+
+      <!-- Project Purpose -->
+      <section class="mb-20">
+        <h2 class="mb-5 font-heading text-2xl font-semibold">Project Purpose</h2>
+
+        <p class="max-w-4xl leading-8 text-zinc-400">
+          {{ detail.purpose }}
+        </p>
+      </section>
+
+      <!-- Key Features -->
+      <section class="mb-20">
+        <h2 class="mb-8 font-heading text-2xl font-semibold">Key Features</h2>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          @for (feature of detail.features; track feature.title) {
+            <article
+              class="rounded-xl border border-white/10 bg-white/2 p-6 transition hover:border-indigo-500/40"
+            >
+              <h3 class="mb-3 font-heading text-lg font-semibold">
+                {{ feature.title }}
+              </h3>
+
+              <p class="text-sm leading-7 text-zinc-400">
+                {{ feature.description }}
+              </p>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="mb-20">
+        <h2 class="mb-8 font-heading text-2xl font-semibold">Technology Stack</h2>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          @for (technology of detail.technologies; track technology.name) {
+            <article class="rounded-xl border border-white/10 bg-white/2 p-5">
+              <h3 class="mb-2 font-semibold text-zinc-100">
+                {{ technology.name }}
+              </h3>
+
+              <p class="text-sm leading-7 text-zinc-400">
+                {{ technology.purpose }}
+              </p>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- System Architecture -->
+      @if (detail.architecture) {
+        <section class="mb-20 space-y-6">
+          <div>
+            <p class="text-sm font-medium text-indigo-400">UNDER THE HOOD</p>
+
+            <h2 class="mt-2 font-heading text-2xl font-semibold">System Architecture</h2>
+
+            <p class="mt-2 text-zinc-400">
+              An overview of how the frontend, backend, database, and external services interact
+              within the application.
+            </p>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-white/10 bg-[#111113] p-4 md:p-8">
+            <app-mermaid-diagram [diagram]="detail.architecture"></app-mermaid-diagram>
+          </div>
+        </section>
+      }
+
+      <!-- Database Design -->
+      @if (detail.databaseDesign) {
+        <section class="mb-20 space-y-6">
+          <div>
+            <p class="text-sm font-medium text-indigo-400">DATA STRUCTURE</p>
+
+            <h2 class="mt-2 font-heading text-2xl font-semibold">Database Design</h2>
+
+            <p class="mt-2 text-zinc-400">The main database entities and their relationships.</p>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-white/10 bg-[#111113] p-4 md:p-8">
+            <app-mermaid-diagram [diagram]="detail.databaseDesign"></app-mermaid-diagram>
+          </div>
+        </section>
+      }
+
+      <!-- Implementation Highlights -->
+      <section class="mb-20">
+        <h2 class="mb-8 font-heading text-2xl font-semibold">Implementation Highlights</h2>
+
+        <div class="space-y-4">
+          @for (highlight of detail.implementationHighlights; track $index) {
+            <div class="flex gap-4 rounded-xl border border-white/10 bg-white/2 p-5">
+              <span class="mt-1 text-indigo-400">
+                <lucide-icon [img]="CheckCircle" [size]="18"></lucide-icon>
+              </span>
+
+              <p class="text-sm leading-7 text-zinc-400">
+                {{ highlight }}
+              </p>
+            </div>
+          }
+        </div>
+      </section>
+
+      <!-- What I Learned -->
+      <section class="mb-20">
+        <h2 class="mb-8 font-heading text-2xl font-semibold">What I Learned</h2>
+
+        <div class="space-y-4">
+          @for (learning of detail.learnings; track $index) {
+            <p class="border-l-2 border-indigo-500/50 pl-5 text-sm leading-7 text-zinc-400">
+              {{ learning }}
+            </p>
+          }
+        </div>
+      </section>
+
+      <!-- Project Navigation -->
+      <footer class="border-t border-white/10 pt-8">
+        <a
+          routerLink="/projects"
+          class="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-indigo-400 transition hover:text-indigo-300"
+        >
+          <lucide-icon [img]="ArrowLeft" [size]="16"></lucide-icon>
+          Back to All Projects
+        </a>
+      </footer>
+    </div>
+  </main>
+} @else {
+  <!-- Project Not Found -->
+  <main
+    class="flex min-h-screen items-center justify-center bg-[#09090b] px-6 text-center text-zinc-400"
+  >
+    <div>
+      <h1 class="mb-3 font-heading text-3xl font-bold text-white">Project Detail Not Found</h1>
+
+      <p class="mb-6">The project you're looking for doesn't exist.</p>
+
+      <a routerLink="/projects" class="cursor-pointer text-indigo-400 hover:text-indigo-300">
+        Back to Projects
+      </a>
+    </div>
+  </main>
+}
