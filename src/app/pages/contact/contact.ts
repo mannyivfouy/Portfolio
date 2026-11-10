@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { ContactIntro } from './sections/contact-intro/contact-intro';
+import { ContactLinks } from './sections/contact-links/contact-links';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [ContactIntro, ContactLinks],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
