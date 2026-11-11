@@ -1,0 +1,50 @@
+<section class="border-t border-white/10" appScrollReveal>
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">Experience</p>
+      </div>
+
+      <!-- Experience list -->
+      <div class="space-y-12">
+        @for (experience of experiences; track experience.role) {
+          <article>
+            <!-- Header -->
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+              <div>
+                <h2 class="font-heading text-2xl font-bold tracking-tight text-white">
+                  {{ experience.role }}
+                </h2>
+
+                <p class="mt-1 text-sm text-zinc-500">
+                  {{ experience.company }} · {{ experience.type }}
+                </p>
+              </div>
+
+              <p class="text-sm text-zinc-500">
+                {{ experience.period }}
+              </p>
+            </div>
+
+            <!-- Description -->
+            <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-400">
+              {{ experience.description }}
+            </p>
+
+            <!-- Responsibilities -->
+            <ul class="mt-6 max-w-2xl space-y-3">
+              @for (responsibility of experience.responsibilities; track responsibility) {
+                <li class="flex gap-3 text-sm leading-6 text-zinc-400">
+                  <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400"></span>
+
+                  <span>{{ responsibility }}</span>
+                </li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

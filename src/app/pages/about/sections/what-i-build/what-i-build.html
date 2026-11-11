@@ -1,0 +1,25 @@
+<section class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-10 md:grid-cols-[180px_1fr] md:gap-16">
+      <!-- Section heading -->
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">What I Build</p>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        @for (capability of capabilities; track capability.title) {
+          <article>
+            <h2 class="font-heading text-xl font-bold tracking-tight text-white">
+              {{ capability.title }}
+            </h2>
+
+            <p class="mt-4 text-sm leading-7 text-zinc-400">
+              {{ capability.description }}
+            </p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
