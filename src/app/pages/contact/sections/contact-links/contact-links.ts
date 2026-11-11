@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ArrowUpRight, Github, Linkedin, LucideAngularModule } from 'lucide-angular';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-contact-links',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, ScrollRevealDirective],
   templateUrl: './contact-links.html',
   styleUrl: './contact-links.css',
 })

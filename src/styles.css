@@ -22,3 +22,25 @@ body {
   background: #09090b;
   color: #fafafa;
 }
+
+/* Scroll Reveal Animation */
+[appScrollReveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 800ms ease-out,
+    transform 800ms ease-out;
+}
+
+[appScrollReveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [appScrollReveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

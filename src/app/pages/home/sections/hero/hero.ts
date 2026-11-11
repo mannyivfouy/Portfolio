@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ArrowRight, Github, Linkedin, LucideAngularModule } from 'lucide-angular';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-hero',
-  imports: [LucideAngularModule, RouterLink],
+  imports: [LucideAngularModule, RouterLink, ScrollRevealDirective],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
