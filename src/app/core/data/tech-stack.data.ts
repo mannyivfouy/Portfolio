@@ -21,6 +21,10 @@ export const TECH_STACK: TechCategory[] = [
         icon: 'assets/icons/technologies/tailwind.svg'
       },
       {
+        name: 'Bootstrap',
+        icon: 'assets/icons/technologies/bootstrap.svg'
+      },
+      {
         name: 'Angular',
         icon: 'assets/icons/technologies/angular.svg'
       },
@@ -69,6 +73,10 @@ export const TECH_STACK: TechCategory[] = [
       {
         name: 'PostgreSQL',
         icon: 'assets/icons/technologies/postgres.svg'
+      },
+      {
+        name: 'Oracle',
+        icon: 'assets/icons/technologies/oracle.svg'
       }
     ]
   },
