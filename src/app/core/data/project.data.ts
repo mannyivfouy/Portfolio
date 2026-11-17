@@ -36,4 +36,15 @@ export const PROJECTS: Project[] = [
     frontendUrl: 'https://github.com/mannyivfouy/School_Website',
     featured: true,
   },
+  {
+    slug: 'ecommerce-platform',
+    title: 'E-Commerce Platform',
+    description: 'A full-stack e-commerce platform developed with Python and Flask, featuring product and category management, shopping cart, order processing, and an admin dashboard. Integrated with Bakong KHQR for digital payments and Telegram for order notifications.',
+    image: 'assets/images/projects/ecommerce-platform.png',
+    category: 'Full-Stack Application',
+    technologies: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'Bakong/KHQR'],
+    frontendUrl: 'https://github.com/mannyivfouy/E-Commerce-Flask',
+    liveUrl: 'flask.mannyivfouy.website',
+    featured: false
+  }
 ];
