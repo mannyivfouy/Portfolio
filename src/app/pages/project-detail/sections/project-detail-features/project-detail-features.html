@@ -1,0 +1,30 @@
+
+<section class="mb-20">
+  <!-- Section Label -->
+  <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-indigo-400">
+    Project Features
+  </p>
+
+  <!-- Feature List -->
+  <ul class="space-y-6">
+    @for (feature of features(); track feature.title) {
+      <li class="flex items-start gap-3">
+        <lucide-icon
+          [img]="CheckCircle"
+          [size]="20"
+          class="mt-0.5 shrink-0 text-indigo-400"
+        />
+
+        <div>
+          <h3 class="mb-1 font-semibold text-zinc-100">
+            {{ feature.title }}
+          </h3>
+
+          <p class="text-sm leading-7 text-zinc-400">
+            {{ feature.description }}
+          </p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>

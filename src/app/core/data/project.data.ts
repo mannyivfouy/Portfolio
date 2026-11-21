@@ -6,9 +6,17 @@ export const PROJECTS: Project[] = [
     title: 'POS & Inventory Management System',
     description:
       'A full-stack system for managing products, inventory, sales, users, and role-based access with integrated Bakong/KHQR payments.',
-    image: 'assets/images/projects/pos-inventory.png',
+    image: 'assets/images/projects/pos/pos-inventory.png',
     category: 'Full-Stack Application',
-    technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Bakong/KHQR'],
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Bakong/KHQR',
+    ],
     frontendUrl: 'https://github.com/mannyivfouy/POS_UI_Angular',
     backendUrl: 'https://github.com/mannyivfouy/POS_API_Express',
     featured: true,
@@ -20,7 +28,15 @@ export const PROJECTS: Project[] = [
       'A learning platform where students can purchase courses, access lessons, track progress, and subscribe to recurring plans.',
     image: 'assets/images/projects/dev-learning-platform.png',
     category: 'Full-Stack Application',
-    technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'NestJS', 'PostgreSQL', 'TypeORM', 'Stripe'],
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Tailwind CSS',
+      'NestJS',
+      'PostgreSQL',
+      'TypeORM',
+      'Stripe',
+    ],
     frontendUrl: 'https://github.com/mannyivfouy/Dev-Learning-Platform-Frontend',
     backendUrl: 'https://github.com/mannyivfouy/Dev-Learning-Platform-Backend',
     featured: true,
@@ -39,12 +55,13 @@ export const PROJECTS: Project[] = [
   {
     slug: 'ecommerce-platform',
     title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce platform developed with Python and Flask, featuring product and category management, shopping cart, order processing, and an admin dashboard. Integrated with Bakong KHQR for digital payments and Telegram for order notifications.',
+    description:
+      'A full-stack e-commerce platform developed with Python and Flask, featuring product and category management, shopping cart, order processing, and an admin dashboard. Integrated with Bakong KHQR for digital payments and Telegram for order notifications.',
     image: 'assets/images/projects/ecommerce-platform.png',
     category: 'Full-Stack Application',
     technologies: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'Bakong/KHQR'],
     frontendUrl: 'https://github.com/mannyivfouy/E-Commerce-Flask',
     liveUrl: 'flask.mannyivfouy.website',
-    featured: false
-  }
+    featured: false,
+  },
 ];
