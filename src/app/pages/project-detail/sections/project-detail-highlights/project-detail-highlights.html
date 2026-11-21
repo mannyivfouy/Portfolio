@@ -1,0 +1,24 @@
+
+<section appScrollReveal class="mb-20">
+  <!-- Section Label -->
+  <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-indigo-400">
+    Implementation Highlights
+  </p>
+
+  <!-- Highlights List -->
+  <ul class="space-y-6">
+    @for (highlight of highlights(); track $index) {
+      <li class="flex items-start gap-3">
+        <lucide-icon
+          [img]="CheckCircle"
+          [size]="20"
+          class="mt-0.5 shrink-0 text-indigo-400"
+        />
+
+        <p class="text-sm leading-7 text-zinc-400">
+          {{ highlight }}
+        </p>
+      </li>
+    }
+  </ul>
+</section>

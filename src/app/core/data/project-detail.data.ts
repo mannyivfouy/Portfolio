@@ -2,6 +2,7 @@ import { ProjectDetailModel } from '../models/project-detail.model';
 
 export const PROJECT_DETAILS: ProjectDetailModel[] = [
   {
+    title: 'POS & Inventory Management System',
     slug: 'pos-inventory-management-system',
     overview:
       'A full-stack Point of Sale and Inventory Management System independently developed to streamline daily business operations. It centralizes product management, inventory tracking, purchasing, sales transactions, customer and supplier management, and digital payment processing.',
@@ -57,180 +58,41 @@ export const PROJECT_DETAILS: ProjectDetailModel[] = [
     technologies: [
       {
         name: 'Angular',
-        purpose: 'Frontend framework used to build the application interface.',
+        icon: 'assets/icons/technologies/angular.svg'
       },
       {
         name: 'TypeScript',
-        purpose: 'Provides type safety and structured frontend development.',
+        icon: 'assets/icons/technologies/typescript.svg'
       },
       {
         name: 'Tailwind CSS',
-        purpose: 'Used to style the application interface and layouts.',
+        icon: 'assets/icons/technologies/tailwind.svg'
       },
       {
         name: 'Node.js',
-        purpose: 'JavaScript runtime used to execute the backend application.',
+        icon: 'assets/icons/technologies/nodejs.svg'
       },
       {
         name: 'Express.js',
-        purpose: 'Backend framework used to build REST APIs and handle HTTP requests.',
+        icon: 'assets/icons/technologies/express.svg'
       },
       {
         name: 'MongoDB',
-        purpose: 'Database used to store application data.',
+        icon: 'assets/icons/technologies/mongodb.svg'
       },
       {
         name: 'Mongoose',
-        purpose: 'Object modeling library used to define schemas and interact with MongoDB.',
+        icon: 'assets/icons/technologies/mongoose.svg'
       },
       {
         name: 'Bakong KHQR',
-        purpose: 'Integrated to generate KHQR codes and verify payment transactions.',
+        icon: 'assets/icons/technologies/bakong.png'
       },
       {
         name: 'Telegram Bot API',
-        purpose: 'Used to send transaction notifications through Telegram.',
+        icon: 'assets/icons/technologies/telegram.svg'
       },
     ],
-    architecture: `
-      flowchart TB
-          A["Angular Frontend<br/>TypeScript + Tailwind CSS"]
-
-          subgraph BACKEND["Node.js Backend"]
-              direction TB
-              B["Express REST API"]
-              C["JWT Authentication<br/>Role & Permission Authorization"]
-              D["Business Logic Services"]
-
-              B --> C
-              C --> D
-          end
-
-          E[("MongoDB")]
-
-          subgraph EXTERNAL["External Services"]
-              direction LR
-              F["Bakong KHQR API"]
-              G["Telegram Bot API"]
-          end
-
-          A --> B
-          D <--> E
-          D --> F
-          D --> G
-
-          classDef frontend fill:#18181b,stroke:#818cf8,color:#fafafa
-          classDef backend fill:#18181b,stroke:#6366f1,color:#fafafa
-          classDef database fill:#312e81,stroke:#818cf8,color:#fafafa
-          classDef external fill:#18181b,stroke:#52525b,color:#fafafa
-
-          class A frontend
-          class B,C,D backend
-          class E database
-          class F,G external
-      `,
-    databaseDesign: `
-erDiagram
-    CATEGORY ||--o{ PRODUCT : categorizes
-    SUPPLIER ||--o{ PRODUCT : supplies
-    SUPPLIER ||--o{ PURCHASE : provides
-    USER ||--o{ PURCHASE : creates
-
-    PURCHASE ||--o{ PURCHASE_ITEM : contains
-    PRODUCT ||--o{ PURCHASE_ITEM : included_in
-
-    CUSTOMER o|--o{ SALE : associated_with
-    USER ||--o{ SALE : creates
-
-    SALE ||--o{ SALE_ITEM : contains
-    PRODUCT ||--o{ SALE_ITEM : included_in
-
-    ROLE ||--o{ USER : assigned_to
-    ROLE ||--o{ ROLE_PERMISSION : has
-    PERMISSION ||--o{ ROLE_PERMISSION : assigned_through
-
-    CATEGORY {
-        ObjectId _id
-        string name
-    }
-
-    PRODUCT {
-        ObjectId _id
-        string name
-        string sku
-        number stockQty
-        ObjectId categoryId
-        ObjectId supplierId
-    }
-
-    SUPPLIER {
-        ObjectId _id
-        string name
-        string phone
-    }
-
-    CUSTOMER {
-        ObjectId _id
-        string name
-        string phone
-    }
-
-    USER {
-        ObjectId _id
-        string username
-        string fullname
-        ObjectId roleId
-    }
-
-    ROLE {
-        ObjectId _id
-        string name
-    }
-
-    PERMISSION {
-        ObjectId _id
-        string name
-        string module
-        string action
-    }
-
-    ROLE_PERMISSION {
-        ObjectId _id
-        ObjectId roleId
-        ObjectId permissionId
-    }
-
-    PURCHASE {
-        ObjectId _id
-        string invoiceNo
-        ObjectId supplierId
-        ObjectId createdBy
-        number total
-    }
-
-    PURCHASE_ITEM {
-        ObjectId _id
-        ObjectId purchaseId
-        ObjectId productId
-        number quantity
-    }
-
-    SALE {
-        ObjectId _id
-        string invoiceNo
-        ObjectId customerId
-        ObjectId createdBy
-        string paymentStatus
-        number total
-    }
-
-    SALE_ITEM {
-        ObjectId _id
-        ObjectId saleId
-        ObjectId productId
-        number quantity
-    }
-`,
     implementationHighlights: [
       'Implemented JWT-based authentication with bcrypt password verification and one-day token expiration to secure user access.',
 
@@ -260,6 +122,9 @@ erDiagram
 
       'Improved understanding of business workflows involving sales transactions, purchasing operations, and inventory management.',
     ],
-    screenshots: [],
+    screenshots: [
+      'assets/images/projects/pos/login-page.png',
+      'assets/images/projects/pos/pos-inventory.png',
+    ],
   },
 ];

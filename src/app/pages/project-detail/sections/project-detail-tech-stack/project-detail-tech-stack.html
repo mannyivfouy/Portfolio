@@ -1,0 +1,26 @@
+
+<section appScrollReveal class="mb-20">
+  <!-- Section Label -->
+  <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-indigo-400">
+    Technologies
+  </p>
+
+  <!-- Technology Badges -->
+  <div class="flex flex-wrap gap-3">
+    @for (technology of technologies(); track technology.name) {
+      <div
+        class="inline-flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/3 px-4 py-2.5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:bg-indigo-500/5"
+      >
+        <img
+          [src]="technology.icon"
+          [alt]="technology.name"
+          class="h-5 w-5 object-contain"
+        />
+
+        <span class="text-sm font-medium text-zinc-300">
+          {{ technology.name }}
+        </span>
+      </div>
+    }
+  </div>
+</section>
