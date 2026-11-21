@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import { ChevronLeft, ChevronRight, LucideAngularModule } from 'lucide-angular';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-project-detail-gallery',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, ScrollRevealDirective],
   templateUrl: './project-detail-gallery.html',
   styleUrl: './project-detail-gallery.css',
 })
