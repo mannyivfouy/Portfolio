@@ -58,39 +58,39 @@ export const PROJECT_DETAILS: ProjectDetailModel[] = [
     technologies: [
       {
         name: 'Angular',
-        icon: 'assets/icons/technologies/angular.svg'
+        icon: 'assets/icons/technologies/angular.svg',
       },
       {
         name: 'TypeScript',
-        icon: 'assets/icons/technologies/typescript.svg'
+        icon: 'assets/icons/technologies/typescript.svg',
       },
       {
         name: 'Tailwind CSS',
-        icon: 'assets/icons/technologies/tailwind.svg'
+        icon: 'assets/icons/technologies/tailwind.svg',
       },
       {
         name: 'Node.js',
-        icon: 'assets/icons/technologies/nodejs.svg'
+        icon: 'assets/icons/technologies/nodejs.svg',
       },
       {
         name: 'Express.js',
-        icon: 'assets/icons/technologies/express.svg'
+        icon: 'assets/icons/technologies/express.svg',
       },
       {
         name: 'MongoDB',
-        icon: 'assets/icons/technologies/mongodb.svg'
+        icon: 'assets/icons/technologies/mongodb.svg',
       },
       {
         name: 'Mongoose',
-        icon: 'assets/icons/technologies/mongoose.svg'
+        icon: 'assets/icons/technologies/mongoose.svg',
       },
       {
         name: 'Bakong KHQR',
-        icon: 'assets/icons/technologies/bakong.png'
+        icon: 'assets/icons/technologies/bakong.png',
       },
       {
         name: 'Telegram Bot API',
-        icon: 'assets/icons/technologies/telegram.svg'
+        icon: 'assets/icons/technologies/telegram.svg',
       },
     ],
     implementationHighlights: [
@@ -108,7 +108,6 @@ export const PROJECT_DETAILS: ProjectDetailModel[] = [
 
       'Developed reusable backend services and REST API endpoints to separate business logic from request handling.',
     ],
-    challenges: [],
     learnings: [
       'Gained practical experience developing a full-stack application using Angular, Node.js, Express.js, and MongoDB.',
 
@@ -125,6 +124,70 @@ export const PROJECT_DETAILS: ProjectDetailModel[] = [
     screenshots: [
       'assets/images/projects/pos/login-page.png',
       'assets/images/projects/pos/pos-inventory.png',
+    ],
+  },
+  {
+    title: 'School Website',
+    slug: 'school-website',
+    overview:
+      'A modern and responsive school website designed to present school information through a clean interface, intuitive navigation, and well-organized content.',
+    purpose:
+      'To provide an accessible and user-friendly platform where visitors can explore school information, discover educational programs, and navigate content through a responsive and multilingual interface.',
+    features: [
+      {
+        title: 'Responsive Design',
+        description:
+          'Provides a consistent browsing experience across desktop, tablet, and mobile devices.',
+      },
+      {
+        title: 'Multilingual Support',
+        description:
+          'Allows visitors to switch between supported languages to access school information more conveniently.',
+      },
+      {
+        title: 'Reusable UI Components',
+        description:
+          'Uses reusable Angular components to maintain consistency and simplify frontend development.',
+      },
+      {
+        title: 'Intuitive Navigation',
+        description:
+          'Organizes website sections to help visitors easily find relevant school information.',
+      },
+      {
+        title: 'Organized School Information',
+        description:
+          'Presents school details and educational information in a clear and structured layout.',
+      },
+    ],
+    technologies: [
+      {
+        name: 'Angular',
+        icon: 'assets/icons/technologies/angular.svg',
+      },
+      {
+        name: 'TypeScript',
+        icon: 'assets/icons/technologies/typescript.svg',
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: 'assets/icons/technologies/tailwind.svg',
+      },
+    ],
+    learnings: [
+      'Building reusable components with Angular.',
+      'Structuring and organizing a frontend application.',
+      'Creating responsive layouts using Tailwind CSS.',
+      'Implementing multilingual user interfaces.',
+      'Maintaining consistent UI design across different pages.',
+    ],
+    screenshots: [
+      'assets/images/projects/school-website/home.png',
+      'assets/images/projects/school-website/contact.png',
+      'assets/images/projects/school-website/about.png',
+      'assets/images/projects/school-website/home2.png',
+      'assets/images/projects/school-website/academics.png',
+      'assets/images/projects/school-website/academic-detail.png',
     ],
   },
 ];

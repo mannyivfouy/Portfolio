@@ -90,6 +90,35 @@ export const TECH_STACK: TechCategory[] = [
       {
         name: 'GitHub',
         icon: 'assets/icons/technologies/github.svg'
+      },
+      {
+        name: 'Postman',
+        icon: 'assets/icons/technologies/postman.svg'
+      }
+    ]
+  },
+  {
+    title: 'Cloud & Infrastructure',
+    technologies: [
+      {
+        name: 'AWS',
+        icon: 'assets/icons/technologies/aws.svg'
+      },
+      {
+        name: 'Ubuntu',
+        icon: 'assets/icons/technologies/ubuntu.svg'
+      },
+      {
+        name: 'Nginx',
+        icon: 'assets/icons/technologies/nginx.svg'
+      },
+      {
+        name: 'Cloudflare',
+        icon: 'assets/icons/technologies/cloudflare.svg'
+      },
+      {
+        name: 'Vercel',
+        icon: 'assets/icons/technologies/vercel.svg'
       }
     ]
   }

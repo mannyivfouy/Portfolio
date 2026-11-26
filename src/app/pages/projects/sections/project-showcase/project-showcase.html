@@ -2,10 +2,7 @@
   <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
     <div class="space-y-24">
       @for (project of projects(); track project.slug; let i = $index) {
-        <article
-          appScrollReveal
-          class="grid items-center gap-10 md:grid-cols-2 md:gap-16"
-        >
+        <article appScrollReveal class="grid items-center gap-10 md:grid-cols-2 md:gap-16">
           <!-- Project Image -->
           <div [class.md:order-2]="i % 2 !== 0">
             <img
@@ -17,15 +14,36 @@
 
           <!-- Project Details -->
           <div [class.md:order-1]="i % 2 !== 0">
-            <p
-              class="text-sm font-semibold uppercase tracking-widest text-indigo-400"
-            >
-              {{ project.category }}
-            </p>
+            <!-- Category + Project Status -->
+            <div class="flex items-center justify-between gap-4">
+              <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+                {{ project.category }}
+              </p>
 
-            <h2
-              class="mt-4 font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl"
-            >
+              @if (project.status; as status) {
+                <span
+                  class="inline-flex shrink-0 items-center gap-2 text-xs font-medium"
+                  [ngClass]="{
+                    'text-emerald-400': status === 'Completed',
+                    'text-blue-400': status === 'In Progress',
+                    'text-zinc-400': status === 'On Hold',
+                  }"
+                >
+                  <span
+                    class="h-1.5 w-1.5 rounded-full"
+                    [ngClass]="{
+                      'bg-emerald-400': status === 'Completed',
+                      'bg-blue-400': status === 'In Progress',
+                      'bg-zinc-400': status === 'On Hold',
+                    }"
+                  ></span>
+
+                  {{ status }}
+                </span>
+              }
+            </div>
+
+            <h2 class="mt-4 font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {{ project.title }}
             </h2>
 
@@ -50,11 +68,7 @@
               class="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white"
             >
               View Case Study
-              <span
-                class="transition-transform group-hover:translate-x-1"
-              >
-                →
-              </span>
+              <span class="transition-transform group-hover:translate-x-1"> → </span>
             </a>
           </div>
         </article>

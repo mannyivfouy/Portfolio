@@ -20,8 +20,8 @@ export interface ProjectDetailModel {
   purpose: string;
   features: ProjectFeature[];
   technologies: ProjectTechnology[];
-  implementationHighlights: string[];
-  challenges: ProjectChallenge[];
+  implementationHighlights?: string[];
+  challenges?: ProjectChallenge[];
   learnings: string[];
   screenshots: string[];
 }
