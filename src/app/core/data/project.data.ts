@@ -20,6 +20,7 @@ export const PROJECTS: Project[] = [
     frontendUrl: 'https://github.com/mannyivfouy/POS_UI_Angular',
     backendUrl: 'https://github.com/mannyivfouy/POS_API_Express',
     featured: true,
+    status: 'On Hold'
   },
   {
     slug: 'dev-learning-platform',
@@ -46,11 +47,12 @@ export const PROJECTS: Project[] = [
     title: 'School Website',
     description:
       'A modern responsive school website focused on clear information architecture, clean interfaces, and a professional user experience.',
-    image: 'assets/images/projects/school-website.png',
+    image: 'assets/images/projects/school-website/home.png',
     category: 'Frontend Application',
     technologies: ['Angular', 'TypeScript', 'Tailwind CSS'],
     frontendUrl: 'https://github.com/mannyivfouy/School_Website',
     featured: true,
+    status: 'Completed'
   },
   {
     slug: 'ecommerce-platform',

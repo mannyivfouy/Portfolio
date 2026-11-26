@@ -1,3 +1,4 @@
+export type ProjectStatus = 'Completed' | 'In Progress' | 'On Hold';
 export interface Project {
   title: string;
   slug: string;
@@ -5,8 +6,9 @@ export interface Project {
   image: string;
   category: string;
   technologies: string[];
-  frontendUrl?: string
-  backendUrl?:string
+  frontendUrl?: string;
+  backendUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  status?: ProjectStatus
 }

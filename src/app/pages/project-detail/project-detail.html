@@ -17,7 +17,11 @@
       <app-project-detail-tech-stack [technologies]="detail.technologies" />
 
       <!-- Implementation Highlights -->
-      <app-project-detail-highlights [highlights]="detail.implementationHighlights" />
+      @if (detail.implementationHighlights; as highlights) {
+        @if (highlights.length) {
+          <app-project-detail-highlights [highlights]="highlights" />
+        }
+      }
 
       <!-- What I Learned -->
       <app-project-detail-learnings [learnings]="detail.learnings" />
